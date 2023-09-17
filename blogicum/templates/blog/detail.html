@@ -6,7 +6,7 @@
   <article>
     {% include "includes/post_set.html" %}         
     <p>
-      {{ post.text }}
+      {{ post.text|linebreaksbr }}
     </p>          
   </article>  
 {% endblock %} 
