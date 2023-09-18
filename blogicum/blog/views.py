@@ -46,7 +46,7 @@ posts = [
 ]
 
 
-POSTS_DICT = [post['id'] for post in posts]
+POSTS_SEARCH = [post['id'] for post in posts]
 
 
 def index(request):
@@ -57,8 +57,8 @@ def index(request):
 
 def post_detail(request, id):
     template = 'blog/detail.html'
-    context = {'post': posts[id]}
-    if id in POSTS_DICT:
+    if id in POSTS_SEARCH:
+        context = {'post': posts[id]}
         return render(request, template, context)
     raise Http404('Пост не найден')
 
